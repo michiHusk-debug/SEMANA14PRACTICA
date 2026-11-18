@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Tienda Web | Carrito</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body data-base="../" data-pagina="carrito">
+  <div id="encabezado"></div>
+
+  <main class="contenedor">
+    <h1>🛒 Tu Carrito de Compras</h1>
+    <div id="aviso" class="mensaje" role="status"></div>
+
+    <div id="seccion-carrito">
+      <table class="tabla-carrito">
+        <thead>
+          <tr><th>Producto</th><th>Precio</th><th>Cant</th><th>Subtotal</th><th>Acción</th></tr>
+        </thead>
+        <tbody id="lista-carrito"></tbody>
+      </table>
+
+      <div class="resumen-total">
+        <h2>Total: <span id="monto-total">S/ 0.00</span></h2>
+      </div>
+
+      <section class="seccion-comprobante">
+        <h3>Confirmar Compra</h3>
+        <form id="form-comprobante" class="formulario">
+          <div class="campo">
+            <label for="tipo-comprobante">Comprobante</label>
+            <select id="tipo-comprobante">
+              <option value="boleta">Boleta</option>
+              <option value="factura">Factura</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label id="label-doc">DNI</label>
+            <input type="text" id="doc-cliente" required>
+          </div>
+          <div class="campo">
+            <label id="label-nombre">Nombre Completo</label>
+            <input type="text" id="nombre-cliente" required>
+          </div>
+          <button type="submit" class="boton">Emitir Comprobante</button>
+        </form>
+      </section>
+    </div>
+
+    <div id="resultado-comprobante" class="comprobante-ticket" style="display: none;"></div>
+  </main>
+
+  <div id="pie"></div>
+  <script src="../js/componentes.js"></script>
+  <script src="../js/carrito.js"></script>
+</body>
+</html>

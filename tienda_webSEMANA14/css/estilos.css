@@ -1,0 +1,204 @@
+:root {
+  --azul: #1f4e79;
+  --claro: #f4f7fb;
+  --texto: #1c2833;
+  --acento: #b8480f;
+  --error: #b03a2e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--texto);
+  background: var(--claro);
+  line-height: 1.5;
+}
+
+/* Encabezado y menú */
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: var(--azul);
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-bottom: 2px solid transparent;
+}
+
+.menu a:hover,
+.menu a.activo {
+  border-bottom-color: #f5b041;
+}
+
+/* Contenido */
+.contenedor {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.presentacion {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.boton {
+  display: inline-block;
+  background: var(--acento);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  padding: 0.7rem 1.4rem;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.boton:hover {
+  filter: brightness(0.9);
+}
+
+/* Tarjetas y cuadrícula */
+.cuadricula {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.tarjeta {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.precio {
+  font-weight: bold;
+  color: var(--azul);
+}
+
+/* Formulario */
+.formulario {
+  max-width: 600px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.campo {
+  margin-bottom: 1rem;
+}
+
+.campo label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #7f8c9a;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: 2px solid var(--acento);
+}
+
+.campo.invalido input,
+.campo.invalido select,
+.campo.invalido textarea {
+  border-color: var(--error);
+}
+
+.error {
+  display: block;
+  min-height: 1.2em;
+  color: var(--error);
+  font-size: 0.9rem;
+}
+
+/* Mensajes de confirmación y error */
+.mensaje {
+  display: none;
+  margin: 1rem 0;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+}
+
+.mensaje.exito {
+  display: block;
+  background: #d5f5e3;
+  color: #145a32;
+}
+
+.mensaje.fallo {
+  display: block;
+  background: #fadbd8;
+  color: #78281f;
+}
+
+/* Pie de página */
+.pie {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  text-align: center;
+  background: var(--azul);
+  color: #fff;
+}
+
+/* Contador del carrito */
+.carrito {
+  color: #fff;
+}
+
+/* Diseño adaptable */
+@media (max-width: 800px) {
+  .cuadricula {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .cuadricula {
+    grid-template-columns: 1fr;
+  }
+  .encabezado {
+    flex-direction: column;
+  }
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
